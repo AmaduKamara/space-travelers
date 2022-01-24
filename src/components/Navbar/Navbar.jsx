@@ -1,28 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../../Images/logo.png';
 
 const Navbar = () => (
-  <nav>
-
-    <Link to="/">
-      <img src={logo} alt="logo" />
-    </Link>
-    <ul>
-      <li>
+  <nav className="container mx-auto  border-b-2 bg-white py-6 flex justify-between">
+    <NavLink to="/" className="flex items-center">
+      <img width="70" src={logo} alt="logo" className="mr-3" />
+      {' '}
+      <span className="text-2xl">Space Travelers&apos; Hub</span>
+    </NavLink>
+    <ul className="flex items-center active">
+      <li className="mx-6 text-lg">
         {' '}
-        <Link to="/rockets"> Rockets </Link>
+        <NavLink to="/"> Rockets </NavLink>
       </li>
-      <li>
+      <li className="mx-6 text-lg active">
         {' '}
-        <Link to="/missions"> Missions </Link>
+        <NavLink to="/missions"> Missions </NavLink>
       </li>
-      <li>
+      <li className="ml-3 text-lg border-l-2 border-l-gray-700 pl-6 active">
         {' '}
-        <Link to="/profile"> My Profile </Link>
+        <NavLink to="/profile"> My Profile </NavLink>
       </li>
     </ul>
-
   </nav>
 );
 
