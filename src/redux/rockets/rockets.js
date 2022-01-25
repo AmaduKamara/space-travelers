@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const FETCH_ROCKETS = 'rockets/FETCH_ROCKETS';
-const DISPLAY_ROCKETS = 'rockets/DISPLAY_ROCKETS';
+const ROCKET_BOOKING = 'rockets/ROCKET_BOOKING';
 
 const initialState = {
   rockets: [],
@@ -14,8 +14,8 @@ export const fetchRockets = (payload) => ({
   payload,
 });
 
-export const displayRockets = (payload) => ({
-  type: DISPLAY_ROCKETS,
+export const rocketBooking = (payload) => ({
+  type: ROCKET_BOOKING,
   payload,
 });
 
@@ -27,13 +27,21 @@ export const getRockets = () => async (dispatch) => {
   dispatch(fetchRockets(data));
 };
 
+export const toggleBooking = (state, payload) => {
+  const newState = state.map((rocket) => {
+    if (rocket.id !== payload) return rocket;
+    return { ...rocket, reserved: !rocket.reserved };
+  });
+  return newState;
+};
+
 // REDUCER
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_ROCKETS:
       return { ...state, rockets: action.payload };
-    case DISPLAY_ROCKETS:
-      return [...action.payload];
+    case ROCKET_BOOKING:
+      return { rockets: toggleBooking(state.rockets, action.payload) };
     default:
       return state;
   }

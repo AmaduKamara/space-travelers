@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getRockets } from '../../redux/rockets/rockets';
+import { getRockets, rocketBooking } from '../../redux/rockets/rockets';
 import Rocket from './Rocket';
 
 function RocketsData() {
@@ -11,6 +11,10 @@ function RocketsData() {
     dispatch(getRockets());
   }, []);
 
+  const handleToggleClick = (id) => {
+    dispatch(rocketBooking(id));
+  };
+
   return (
     <div className="my-5 px-5">
       {rockets.map((rocket) => (
@@ -20,6 +24,9 @@ function RocketsData() {
           rocket_image={rocket.flickr_images[0]}
           description={rocket.description}
           key={rocket.id}
+          id={rocket.id}
+          handleToggleClick={handleToggleClick}
+          reserved={rocket.reserved}
         />
       ))}
     </div>
