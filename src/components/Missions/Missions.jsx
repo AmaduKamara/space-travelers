@@ -1,5 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable camelcase */
 import { React, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMissions } from '../../redux/Missions/missions';
@@ -32,7 +30,7 @@ const Missions = () => {
                       Status
                     </th>
                     <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                      &lsquo;
+                      {' '}
                     </th>
                   </tr>
                 </thead>
@@ -43,13 +41,13 @@ const Missions = () => {
                     Loading ...
                   </span>
                 ) : (selector.missions.map((items) => {
-                  const { mission_id, mission_name, description } = items;
+                  const { mission_id: missionID, mission_name: missionName, description } = items;
                   return (
                     <Mission
-                      key={mission_id}
-                      id={mission_id}
+                      key={missionID}
+                      id={missionID}
                       description={description}
-                      missionName={mission_name}
+                      missionName={missionName}
                     />
                   );
                 })) }
