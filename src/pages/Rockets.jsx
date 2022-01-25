@@ -1,8 +1,9 @@
 import React from 'react';
+import RocketsData from '../components/Rockets/RocketsData';
 
 const Rockets = () => (
   <div className="container mx-auto">
-    <h1>Rockets Page</h1>
+    <RocketsData />
   </div>
 );
 

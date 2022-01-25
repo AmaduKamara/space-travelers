@@ -1,9 +1,16 @@
-// import axios from 'axios';
+
+import axios from 'axios';
+
 
 const FETCH_ROCKETS = 'rockets/FETCH_ROCKETS';
 const DISPLAY_ROCKETS = 'rockets/DISPLAY_ROCKETS';
 
-const initialState = [];
+
+const initialState = {
+  rockets: [],
+  loading: false,
+};
+
 
 // ACTIONS
 export const fetchRockets = (payload) => ({
@@ -17,17 +24,19 @@ export const displayRockets = (payload) => ({
 });
 
 // API ACTIONS
-// const url = 'https://api.spacexdata.com/v3/rockets';
+export const getRockets = () => async (dispatch) => {
+  // Fetch rockets here and dispatch displayRockets...
+  const rockets = await axios.get('https://api.spacexdata.com/v3/rockets');
+  const data = await rockets.data;
+  dispatch(fetchRockets(data));
+};
 
-// export const getRockets = () => async (dispatch) => {
-//   // Fetch rockets here and dispatch displayRockets...
-// };
 
 // REDUCER
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_ROCKETS:
-      return [...state.rockets, action.payload];
+      return { ...state, rockets: action.payload };
     case DISPLAY_ROCKETS:
       return [...action.payload];
     default:
