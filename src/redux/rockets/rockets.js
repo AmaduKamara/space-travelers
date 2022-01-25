@@ -1,16 +1,12 @@
-
 import axios from 'axios';
-
 
 const FETCH_ROCKETS = 'rockets/FETCH_ROCKETS';
 const DISPLAY_ROCKETS = 'rockets/DISPLAY_ROCKETS';
-
 
 const initialState = {
   rockets: [],
   loading: false,
 };
-
 
 // ACTIONS
 export const fetchRockets = (payload) => ({
@@ -30,7 +26,6 @@ export const getRockets = () => async (dispatch) => {
   const data = await rockets.data;
   dispatch(fetchRockets(data));
 };
-
 
 // REDUCER
 const reducer = (state = initialState, action) => {
