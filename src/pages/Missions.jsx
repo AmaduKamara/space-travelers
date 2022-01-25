@@ -1,9 +1,10 @@
 import React from 'react';
+import Missions from '../components/Missions/Missions';
 
 function Mission() {
   return (
     <div className="container mx-auto">
-      <h1>Mission Page</h1>
+      <Missions />
     </div>
   );
 }
