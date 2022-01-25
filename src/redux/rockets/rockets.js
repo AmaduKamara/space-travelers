@@ -23,18 +23,17 @@ export const displayRockets = (payload) => ({
 
 export const getRockets = () => async (dispatch) => {
   // Fetch rockets here and dispatch displayRockets...
-  const fetchedRockets = await axios.get(
-    `${process.env.REACT_APP_SPACEX_BASE_API}rockets`
-  );
-  const data = await fetchedRockets.data;
-  dispatch({ type: FETCH_ROCKETS, payload: data });
+  const rockets = await axios.get('https://api.spacexdata.com/v3/rockets');
+  const data = await rockets.data;
+  // console.log('loaded data: ', data);
+  dispatch(fetchRockets(data));
 };
 
 // REDUCER
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_ROCKETS:
-      return [...state.rockets, action.payload];
+      return { ...state, rockets: action.payload };
     case DISPLAY_ROCKETS:
       return [...action.payload];
     default:
