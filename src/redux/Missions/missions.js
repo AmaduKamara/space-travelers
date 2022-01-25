@@ -3,12 +3,10 @@ const initialState = [];
 const SOMETHING = 'Missions/SOMETHING';
 
 // LOCAL ACTIONS
-export const missionAction = (payload) => (
-  {
-    type: SOMETHING,
-    payload,
-  }
-);
+export const missionAction = (payload) => ({
+  type: SOMETHING,
+  payload,
+});
 // API ACTIONS
 
 // REDUCER
