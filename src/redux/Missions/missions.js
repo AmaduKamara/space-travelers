@@ -14,7 +14,6 @@ const GET_MISSIONS_ERROR = 'Missions/GET_MISSIONS_ERROR';
 
 // Local ACTIONS
 
-
 // API ACTIONS
 export const fetchMissions = () => (dispatch) => {
   dispatch({ type: GET_MISSIONS_START });
