@@ -51,7 +51,10 @@ Rocket.propTypes = {
   rocket_image: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   handleToggleClick: PropTypes.func.isRequired,
-  reserved: PropTypes.bool.isRequired,
+  reserved: PropTypes.bool,
 };
 
+Rocket.defaultProps = {
+  reserved: false,
+};
 export default Rocket;
