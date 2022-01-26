@@ -12,10 +12,11 @@ const Mission = ({
           {description}
         </td>
         <td className="text-sm border text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-          <button type="button" id={id} onClick={toggleMission} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">Active Member</button>
+          {reserved ? <span className="text-xs px-2 py-0.5 font-bold bg-blue-500 text-white rounded">Active Member</span> : <span className="text-xs px-2 py-0.5 font-bold bg-gray-600 text-white rounded">NOT A MEMBER</span>}
         </td>
         <td className="text-sm border text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-          <button type="button" className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">{reserved ? 'Reserved True' : 'Reserved False'}</button>
+          {reserved ? <button type="button" id={id} onClick={toggleMission} className="bg-transparent hover:border-red-700 text-red-400 font-bold py-2 px-4 border border-red-400 rounded">Leave Mission</button> : <button type="button" id={id} onClick={toggleMission} className="bg-transparent hover:border-black font-bold py-2 px-4 border border-gray-600 text-black rounded">Join Mission</button>}
+
         </td>
       </tr>
     </tbody>
