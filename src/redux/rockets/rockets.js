@@ -4,7 +4,6 @@ const FETCH_ROCKETS = 'rockets/FETCH_ROCKETS';
 
 const ROCKET_BOOKING = 'rockets/ROCKET_BOOKING';
 
-
 const initialState = {
   rockets: [],
   loading: false,
@@ -29,7 +28,6 @@ export const getRockets = () => async (dispatch) => {
   dispatch(fetchRockets(data));
 };
 
-
 export const toggleBooking = (state, payload) => {
   const newState = state.map((rocket) => {
     if (rocket.id !== payload) return rocket;
@@ -37,7 +35,6 @@ export const toggleBooking = (state, payload) => {
   });
   return newState;
 };
-
 
 // REDUCER
 const reducer = (state = initialState, action) => {
