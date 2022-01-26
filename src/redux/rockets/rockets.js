@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const FETCH_ROCKETS = 'rockets/FETCH_ROCKETS';
+
 const ROCKET_BOOKING = 'rockets/ROCKET_BOOKING';
 
 const initialState = {
