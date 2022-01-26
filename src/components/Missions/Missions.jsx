@@ -1,6 +1,6 @@
 import { React, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMissions } from '../../redux/Missions/missions';
+import { fetchMissions, joinMission } from '../../redux/Missions/missions';
 import Mission from './Mission';
 import MissionTableHead from './MissionTableHead';
 import spinner from '../../Images/spinner.gif';
@@ -12,6 +12,11 @@ const Missions = () => {
     dispatch(fetchMissions());
   }, []);
 
+  const missionHandler = (e) => {
+    const elementId = e.target.id;
+    dispatch(joinMission(elementId));
+  };
+  console.log(selector.missions);
   return (
     <>
       <div className="flex flex-col">
@@ -21,19 +26,26 @@ const Missions = () => {
               <table className="min-w-full border">
                 <MissionTableHead />
                 {selector.isLoading ? (
-                  <span>
-                    <img src={spinner} alt="spinner" />
-                    {' '}
-                    Loading ...
-                  </span>
+                  <thead>
+                    <tr>
+                      <th>
+                        <img src={spinner} alt="spinner" />
+                      </th>
+                    </tr>
+
+                  </thead>
                 ) : (selector.missions.map((items) => {
-                  const { mission_id: missionID, mission_name: missionName, description } = items;
+                  const {
+                    mission_id: missionID, mission_name: missionName, description, reserved,
+                  } = items;
                   return (
                     <Mission
                       key={missionID}
                       id={missionID}
                       description={description}
+                      reserved={reserved}
                       missionName={missionName}
+                      toggleMission={missionHandler}
                     />
                   );
                 })) }

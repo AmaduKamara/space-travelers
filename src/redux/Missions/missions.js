@@ -1,5 +1,4 @@
-/* eslint-disable prefer-destructuring */
-// import spacexApi from '../../Api/spacexApi';
+/* eslint-disable camelcase */
 import axios from 'axios';
 
 // CONSTANTS
@@ -11,6 +10,7 @@ const INITIAL_STATE = {
 const GET_MISSIONS_START = 'Missions/GET_MISSIONS_START';
 const GET_MISSIONS_SUCCESS = 'Missions/GET_MISSIONS_SUCCESS';
 const GET_MISSIONS_ERROR = 'Missions/GET_MISSIONS_ERROR';
+const TOGGLE_MISSION = 'Missions/TOGGLE_MISSION';
 
 // Local ACTIONS
 
@@ -22,6 +22,19 @@ export const fetchMissions = () => (dispatch) => {
   }).catch((error) => { dispatch({ type: GET_MISSIONS_ERROR, payload: error }); });
 };
 
+export const joinMission = (payload) => ({
+  type: TOGGLE_MISSION,
+  payload,
+});
+
+export const toggleMission = (state, payload) => {
+  const newState = state.map((missions) => {
+    if (missions.mission_id !== payload) return missions;
+    return { ...missions, reserved: !missions.reserved };
+  });
+  return newState;
+};
+
 // REDUCER
 const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -31,6 +44,8 @@ const reducer = (state = INITIAL_STATE, action) => {
       return { ...state, missions: action.payload, isLoading: false };
     case GET_MISSIONS_ERROR:
       return { ...state, message: action.payload, isLoading: false };
+    case TOGGLE_MISSION:
+      return { missions: toggleMission(state.missions, action.payload) };
     default:
       return state;
   }
