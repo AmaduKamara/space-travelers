@@ -1,5 +1,3 @@
-/* eslint-disable camelcase */
-// import axios from 'axios';
 // CONSTANTS
 const INITIAL_STATE = {
   missions: [],
@@ -8,14 +6,6 @@ const FETCH_MISSIONS = 'Missions/FETCH_MISSIONS';
 const TOGGLE_MISSION = 'Missions/TOGGLE_MISSION';
 
 // Local ACTIONS
-
-// API ACTIONS
-// export const fetchMissions = () => (dispatch) => {
-//   dispatch({ type: GET_MISSIONS_START });
-//   axios.get(`${process.env.REACT_APP_SPACEX_BASE_API}missions`).then((response) => {
-//     dispatch({ type: GET_MISSIONS_SUCCESS, payload: response.data });
-//   }).catch((error) => { dispatch({ type: GET_MISSIONS_ERROR, payload: error }); });
-// };
 export const fetchMissions = (payload) => ({
   type: FETCH_MISSIONS,
   payload,
