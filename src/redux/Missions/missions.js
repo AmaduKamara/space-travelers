@@ -1,7 +1,9 @@
-// CONSTANTS
+// App state
 const INITIAL_STATE = {
   missions: [],
 };
+
+// Action constants
 const FETCH_MISSIONS = 'Missions/FETCH_MISSIONS';
 const TOGGLE_MISSION = 'Missions/TOGGLE_MISSION';
 
