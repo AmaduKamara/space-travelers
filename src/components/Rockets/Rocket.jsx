@@ -16,7 +16,7 @@ function Rocket({
         <h2 className="text-xl font-semibold pt-2">{name}</h2>
         <p className="my-4">
           {reserved && (
-            <span className="bg-green-600 text-white py-1 px-3 rounded-full">
+            <span className="bg-sky-500 text-white py-1 px-3 rounded-md">
               Reserved
             </span>
           )}
@@ -26,15 +26,15 @@ function Rocket({
         {reserved ? (
           <button
             type="button"
-            className="py-2 px-5 rounded text-red-500 border border-red-400"
+            className="py-2 px-5 rounded border-gray-500 border shadow-md border-b-2 text-gray-500"
             onClick={() => handleToggleClick(id)}
           >
-            Cancel Reserve
+            Cancel Reservation
           </button>
         ) : (
           <button
             type="button"
-            className="py-2 px-5 rounded text-white bg-blue-500 "
+            className="py-2 px-5 rounded text-white bg-blue-500 shadow-md"
             onClick={() => handleToggleClick(id)}
           >
             Reserve Rocket
