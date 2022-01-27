@@ -9,10 +9,11 @@ The application will allow users to book rockets and join selected space mission
 ![image](https://user-images.githubusercontent.com/50941074/151341345-09f7307f-3853-4ba7-a30c-5c3f0ff6b321.png)
 ![image](https://user-images.githubusercontent.com/50941074/151341476-11ceceb1-ad0b-411c-b24d-5608d997b16f.png)
 
-
 ### ScreenShoot - Missions Screens
 ![screenshot](./missions-1.PNG)<br />
 ![screenshot](./missions-2.PNG)<br />
+
+![image](https://user-images.githubusercontent.com/50941074/151343560-22259ac5-9161-4b19-9af3-e910a3a002de.png)
 
 ## Built With
 
@@ -26,10 +27,7 @@ The application will allow users to book rockets and join selected space mission
 
 ## Live Demo
 
-[Live Demo](demo link goes here)
-
-## Video Documentation
-[Video](Doc video link if any)
+[Live Demo](https://spacex-travelers-hub.netlify.app/)
 
 ## Getting Started
 
