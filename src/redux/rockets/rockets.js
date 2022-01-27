@@ -1,12 +1,9 @@
-import axios from 'axios';
-
 const FETCH_ROCKETS = 'rockets/FETCH_ROCKETS';
 
 const ROCKET_BOOKING = 'rockets/ROCKET_BOOKING';
 
 const initialState = {
   rockets: [],
-  loading: false,
 };
 
 // ACTIONS
@@ -21,12 +18,6 @@ export const rocketBooking = (payload) => ({
 });
 
 // API ACTIONS
-export const getRockets = () => async (dispatch) => {
-  // Fetch rockets here and dispatch displayRockets...
-  const rockets = await axios.get('https://api.spacexdata.com/v3/rockets');
-  const data = await rockets.data;
-  dispatch(fetchRockets(data));
-};
 
 export const toggleBooking = (state, payload) => {
   const newState = state.map((rocket) => {

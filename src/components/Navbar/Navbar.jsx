@@ -5,7 +5,8 @@ import logo from '../../Images/logo.png';
 const Navbar = () => (
   <nav className="container mx-auto  border-b-2 bg-white py-6 flex justify-between">
     <NavLink to="/" className="flex items-center">
-      <img width="70" src={logo} alt="logo" className="mr-3" />{' '}
+      <img width="70" src={logo} alt="logo" className="mr-3" />
+      {' '}
       <span className="text-2xl">Space Travelers&apos; Hub</span>
     </NavLink>
     <ul className="flex items-center" activeClassName="active">
