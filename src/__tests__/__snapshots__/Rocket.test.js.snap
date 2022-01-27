@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should do render reserve rocket button and match the snapshot 1`] = `
+<div
+  className="flex mb-6"
+>
+  <img
+    alt="rocket"
+    src="img"
+    width="250"
+  />
+  <div
+    className="mx-5"
+  >
+    <h2
+      className="text-xl font-semibold pt-2"
+    >
+      Test Rocket
+    </h2>
+    <p
+      className="my-4"
+    >
+       
+      Test
+    </p>
+    <button
+      className="py-2 px-5 rounded text-white bg-blue-500 shadow-md"
+      data-testid="rocket-btn"
+      onClick={[Function]}
+      type="button"
+    >
+      Reserve Rocket
+    </button>
+  </div>
+</div>
+`;

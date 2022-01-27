@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot of Misson component 1`] = `
+<tbody
+  className="odd:bg-white even:bg-slate-200 border-2 border-slate-100"
+>
+  <tr>
+    <td
+      className="px-6 py-4  whitespace-wrap flex align-top text-sm font-bold text-gray-900"
+    >
+      test mission
+    </td>
+    <td
+      className="text-sm border-2 border-slate-100 text-gray-900 tracking-tight font-medium px-6 py-4 "
+    >
+      test
+    </td>
+    <td
+      className="text-sm border-2 border-slate-100 text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+    >
+      <span
+        className="text-xs px-2 py-0.5 font-bold bg-sky-500 text-white rounded"
+      >
+        Active Member
+      </span>
+    </td>
+    <td
+      className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+      data-testid="mission-btn"
+    >
+      <button
+        className="bg-transparent hover:border-red-900 text-red-400 font-bold py-2 px-4 border border-red-400 rounded"
+        id="1"
+        onClick={[Function]}
+        type="button"
+      >
+        Leave Mission
+      </button>
+    </td>
+  </tr>
+</tbody>
+`;

@@ -33,6 +33,7 @@ function Rocket({
           </button>
         ) : (
           <button
+            data-testid="rocket-btn"
             type="button"
             className="py-2 px-5 rounded text-white bg-blue-500 shadow-md"
             onClick={() => handleToggleClick(id)}
