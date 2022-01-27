@@ -12,18 +12,18 @@ const Navbar = () => (
     <ul className="flex items-center" activeClassName="active">
       <li className="mx-6 text-lg">
         {' '}
-        <NavLink to="/"> Rockets </NavLink>
+        <NavLink to="/" className="text-blue-600"> Rockets </NavLink>
       </li>
       <li className="mx-6 text-lg" activeClassName="active">
         {' '}
-        <NavLink to="/missions"> Missions </NavLink>
+        <NavLink to="/missions" className="text-blue-600"> Missions </NavLink>
       </li>
       <li
         className="ml-3 text-lg border-l-2 border-l-gray-700 pl-6"
         activeClassName="active"
       >
         {' '}
-        <NavLink to="/profile"> My Profile </NavLink>
+        <NavLink to="/profile" className="text-blue-600"> My Profile </NavLink>
       </li>
     </ul>
   </nav>

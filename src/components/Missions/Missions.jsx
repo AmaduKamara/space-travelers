@@ -16,7 +16,7 @@ const Missions = () => {
     const elementId = e.target.id;
     dispatch(joinMission(elementId));
   };
-  console.log(selector.missions);
+
   return (
     <>
       <div className="flex flex-col">

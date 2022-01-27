@@ -8,6 +8,8 @@ The application will allow users to book rockets and join selected space mission
 ### ScreenShoot - Rockets Screen
 
 ### ScreenShoot - Missions Screens
+![screenshot](./missions-1.PNG)<br />
+![screenshot](./missions-2.PNG)<br />
 
 ## Built With
 
@@ -72,7 +74,11 @@ npm run test
 - [Twitter](https://twitter.com/DevAmkam)
 - [Facebook](https://www.facebook.com/amadus.kamara.7)
 
+👤 **Evren Ersoy**
 
+- [LinkedIn](https://www.linkedin.com/in/ewoskyx/)
+- [GitHub](https://github.com/Ewoskyx)
+- [Twitter](https://twitter.com/Ewoskyx)
 
 ## 🤝 Contributing
 
