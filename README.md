@@ -6,6 +6,9 @@
 In this project, we worked with the real live data from the SpaceX API. Our task is to build a web application for a company that provides commercial and scientific space travel services. 
 The application will allow users to book rockets and join selected space missions.
 ### ScreenShoot - Rockets Screen
+![image](https://user-images.githubusercontent.com/50941074/151341345-09f7307f-3853-4ba7-a30c-5c3f0ff6b321.png)
+![image](https://user-images.githubusercontent.com/50941074/151341476-11ceceb1-ad0b-411c-b24d-5608d997b16f.png)
+
 
 ### ScreenShoot - Missions Screens
 ![screenshot](./missions-1.PNG)<br />
